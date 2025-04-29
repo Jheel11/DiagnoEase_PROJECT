@@ -98,7 +98,7 @@ We are actively working to expand DiagnoEase into a full-fledged health monitori
 
 We believe this tool can help revolutionize preventive care and health literacy. If you're a healthcare professional, researcher, or developer interested in contributing, feel free to reach out!
 
-Email: jheelturakhia@gmail.com and khushipanchal@gmail.com  
+Email: jheelturakhia@gmail.com and panchalk2004@gmail.com  
 
 
 ---

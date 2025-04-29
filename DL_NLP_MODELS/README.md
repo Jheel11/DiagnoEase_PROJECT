@@ -1,4 +1,4 @@
-# Medical Report Analysis using T5 and BART Models
+# T5 and BART Models
 
 This repository contains implementations of **T5** and **BART** models for summarizing medical reports. The goal is to convert unstructured data into structured summaries, providing insights in a user-friendly format. The project employs state-of-the-art Natural Language Processing (NLP) techniques and integrates libraries for efficient text extraction, processing, and model training.
 

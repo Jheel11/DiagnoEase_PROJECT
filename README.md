@@ -97,9 +97,6 @@ We are actively working to expand DiagnoEase into a full-fledged health monitori
 
 ---
 
-Here's your Ngrok + Flask backend setup guide properly formatted in **Markdown for a GitHub README** — including code blocks and headings:
-
-```markdown
 ## 🌐 Hosting Flask Backend Online using Ngrok
 
 To allow the Android app to communicate with your locally running Flask API, we use **Ngrok** to expose `localhost:5000` to the internet through a public URL.

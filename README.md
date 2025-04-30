@@ -190,6 +190,8 @@ ngrok http --domain=<your_custom_domain> 5000
 We believe this tool can help revolutionize preventive care and health literacy. If you're a healthcare professional, researcher, or developer interested in contributing, feel free to reach out!
 
 **Email:** jheelturakhia@gmail.com 
+
+
 **Email:** panchalk2004@gmail.com  
 
 

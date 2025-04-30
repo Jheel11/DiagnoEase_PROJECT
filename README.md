@@ -97,69 +97,80 @@ We are actively working to expand DiagnoEase into a full-fledged health monitori
 
 ---
 
+Here's your Ngrok + Flask backend setup guide properly formatted in **Markdown for a GitHub README** — including code blocks and headings:
+
+```markdown
 ## 🌐 Hosting Flask Backend Online using Ngrok
 
-To allow the Android app to communicate with your locally running Flask API, we use *Ngrok* to expose the localhost:5000 server to the internet through a public URL.
+To allow the Android app to communicate with your locally running Flask API, we use **Ngrok** to expose `localhost:5000` to the internet through a public URL.
+
+---
 
 ### ✅ Step-by-Step Setup
 
 #### 1. *Activate Python Virtual Environment*
+
 Make sure your environment is activated before running the app:
 
-bash
+```bash
 venv\Scripts\activate
-
+```
 
 #### 2. *Start the Flask App*
+
 Run the backend server:
 
-bash
+```bash
 python app.py
-
+```
 
 This will start your app on:  
-http://127.0.0.1:5000/
+`http://127.0.0.1:5000/`
 
-> ⚠ Keep this terminal open — it needs to stay running.
+> ⚠ **Keep this terminal open** — it needs to stay running.
 
 #### 3. *Install and Authenticate Ngrok*
-If you're using Ngrok for the first time on a new machine, get your *AuthToken* from [https://dashboard.ngrok.com/get-started/your-authtoken](https://dashboard.ngrok.com/get-started/your-authtoken) and run:
 
-bash
+If you're using Ngrok for the first time on a new machine, get your **AuthToken** from  
+[https://dashboard.ngrok.com/get-started/your-authtoken](https://dashboard.ngrok.com/get-started/your-authtoken) and run:
+
+```bash
 ngrok config add-authtoken <YOUR_AUTHTOKEN>
+```
 
+**Example:**
 
-Example:
-
-bash
+```bash
 ngrok config add-authtoken 2ofLNa8LyGvp6uEll7ZBvfqT15j_66vu12VsX92Uofsa89hWM
-
+```
 
 #### 4. *Start Ngrok to Tunnel Port 5000*
+
 You can either use a dynamic random domain:
 
-bash
+```bash
 ngrok http 5000
+```
 
+Or, if you have reserved a **custom subdomain** (e.g., reliably-vocal-meerkat.ngrok-free.app):
 
-Or, if you have reserved a *custom subdomain* (e.g., reliably-vocal-meerkat.ngrok-free.app):
-
-bash
+```bash
 ngrok http --domain=reliably-vocal-meerkat.ngrok-free.app 5000
-
+```
 
 Ngrok will now generate a public URL like:  
-https://reliably-vocal-meerkat.ngrok-free.app  
+`https://reliably-vocal-meerkat.ngrok-free.app`  
 which forwards to your local server on port 5000.
 
 #### 5. *Use This URL in the Android App*
-In your Android project (usually within the Retrofit client setup), make sure to use the Ngrok-generated URL as your *base URL* so the app can send requests to the Flask server.
+
+In your Android project (usually in the Retrofit client setup), use the Ngrok-generated URL as your **base URL** so the app can send requests to the Flask server.
 
 ---
 
 ### 🔁 Quick Command Summary
 
-bash
+```bash
 # Activate virtual environment
 venv\Scripts\activate
 
@@ -173,9 +184,8 @@ ngrok config add-authtoken <your_authtoken>
 ngrok http 5000
 # OR
 ngrok http --domain=<your_custom_domain> 5000
+```
 
-
----
 
 
 ## 🙌 Get Involved

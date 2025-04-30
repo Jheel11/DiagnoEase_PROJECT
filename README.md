@@ -35,15 +35,15 @@ This innovation makes preventive healthcare more accessible, especially in rural
 
 ## ⚙️ Methodology
 
-- Data Collection
+- **Data Collection**
   - Gathered anonymized medical PDFs and public datasets.
-- Preprocessing
+- **Preprocessing**
   - Extracted values via PyMuPDF, structured them into tabular format.
   - Cleaned and tokenized summaries using NLP techniques.
-- Model Training
+- **Model Training**
   - Fine-tuned transformer models (T5, BART) on report-summary pairs.
   - Evaluated using ROUGE metrics and validation loss.
-- Deployment
+- **Deployment**
   - Built Flask-based backend API serving the summarization model.
   - Kotlin-based Android app for real-time report upload and feedback.
 
@@ -53,13 +53,16 @@ This innovation makes preventive healthcare more accessible, especially in rural
 
 ## 💡 Tech Stack
 
-- Frontend (Mobile App): Kotlin (Android Studio)
-- Backend API: Python + Flask
-- AI Models: HuggingFace Transformers (T5, BART)
-- Data Handling: Pandas, NumPy, PyMuPDF
-- Preprocessing: NLTK, Scikit-learn
-- Model Evaluation: ROUGE (via evaluate library)
-- Visualization (for internal testing): Matplotlib, Seaborn
+| **Component**                  | **Technologies/Tools**                         |
+|-------------------------------|-------------------------------------------------|
+| **Frontend (Mobile App)**     | Kotlin (Android Studio)                        |
+| **Backend API**               | Python + Flask                                 |
+| **AI Models**                 | HuggingFace Transformers (T5, BART)            |
+| **Data Handling**             | Pandas, NumPy, PyMuPDF                         |
+| **Preprocessing**             | NLTK, Scikit-learn                             |
+| **Model Evaluation**          | ROUGE (via `evaluate` library)                |
+| **Visualization (Internal)**  | Matplotlib, Seaborn                            |
+
 
 ---
 
@@ -94,11 +97,93 @@ We are actively working to expand DiagnoEase into a full-fledged health monitori
 
 ---
 
+## 🌐 Hosting Flask Backend Online using Ngrok
+
+To allow the Android app to communicate with your locally running Flask API, we use *Ngrok* to expose the localhost:5000 server to the internet through a public URL.
+
+### ✅ Step-by-Step Setup
+
+#### 1. *Activate Python Virtual Environment*
+Make sure your environment is activated before running the app:
+
+bash
+venv\Scripts\activate
+
+
+#### 2. *Start the Flask App*
+Run the backend server:
+
+bash
+python app.py
+
+
+This will start your app on:  
+http://127.0.0.1:5000/
+
+> ⚠ Keep this terminal open — it needs to stay running.
+
+#### 3. *Install and Authenticate Ngrok*
+If you're using Ngrok for the first time on a new machine, get your *AuthToken* from [https://dashboard.ngrok.com/get-started/your-authtoken](https://dashboard.ngrok.com/get-started/your-authtoken) and run:
+
+bash
+ngrok config add-authtoken <YOUR_AUTHTOKEN>
+
+
+Example:
+
+bash
+ngrok config add-authtoken 2ofLNa8LyGvp6uEll7ZBvfqT15j_66vu12VsX92Uofsa89hWM
+
+
+#### 4. *Start Ngrok to Tunnel Port 5000*
+You can either use a dynamic random domain:
+
+bash
+ngrok http 5000
+
+
+Or, if you have reserved a *custom subdomain* (e.g., reliably-vocal-meerkat.ngrok-free.app):
+
+bash
+ngrok http --domain=reliably-vocal-meerkat.ngrok-free.app 5000
+
+
+Ngrok will now generate a public URL like:  
+https://reliably-vocal-meerkat.ngrok-free.app  
+which forwards to your local server on port 5000.
+
+#### 5. *Use This URL in the Android App*
+In your Android project (usually within the Retrofit client setup), make sure to use the Ngrok-generated URL as your *base URL* so the app can send requests to the Flask server.
+
+---
+
+### 🔁 Quick Command Summary
+
+bash
+# Activate virtual environment
+venv\Scripts\activate
+
+# Run the Flask app
+python app.py
+
+# Add ngrok authtoken (one-time)
+ngrok config add-authtoken <your_authtoken>
+
+# Open a tunnel (choose one)
+ngrok http 5000
+# OR
+ngrok http --domain=<your_custom_domain> 5000
+
+
+---
+
+
 ## 🙌 Get Involved
 
 We believe this tool can help revolutionize preventive care and health literacy. If you're a healthcare professional, researcher, or developer interested in contributing, feel free to reach out!
 
-Email: jheelturakhia@gmail.com and panchalk2004@gmail.com  
+**Email:** jheelturakhia@gmail.com 
+**Email:** panchalk2004@gmail.com  
 
 
 ---
